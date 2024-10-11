@@ -22,9 +22,9 @@ class Maze:
         plt.imshow(self.maze, cmap='Pastel1_r')
 
         # Placements for the start, end, and sub goal positions.
-        plt.text(self.start_position[0], self.start_position[1], 'S', ha='center', va='center', color='green', fontsize=20)
-        plt.text(self.goal_position[0], self.goal_position[1], 'E', ha='center', va='center', color='red', fontsize=20)
-        plt.text(self.sub_goal_position[0], self.sub_goal_position[1], 'G', ha='center', va='center', color='blue', fontsize=20)
+        plt.text(self.start_position[0], self.start_position[1], 'S', ha='center', va='center', color='green', fontsize=15)
+        plt.text(self.goal_position[0], self.goal_position[1], 'E', ha='center', va='center', color='red', fontsize=15)
+        plt.text(self.sub_goal_position[0], self.sub_goal_position[1], 'G', ha='center', va='center', color='blue', fontsize=15)
 
         # Hide the digits and labels from the plot visualistion. 
         plt.xticks([]), plt.yticks([])
