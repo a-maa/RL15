@@ -36,6 +36,7 @@ class Maze:
 # The layout of the 10x10 maze:
 # 1 = wall.
 # 0 = open area.
+# (If wanted, we can later make another file where we can generate larger mazes like 100x100)
 maze_layout = np.array([
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 0, 1, 0, 0, 0, 1, 0, 0, 1],
