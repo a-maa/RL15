@@ -101,12 +101,12 @@ def animate_agent(agent, maze, num_episodes=1):
     anim = FuncAnimation(fig, update, frames=len(path), interval=50, blit=True, repeat=False)
 
     # Shows the step sum and total reward after closing the animation. Same as in the unanimated variant. 
-    print("Learned Path:")
+    print("Final Path:")
     for row, col in path:
         print(f"({row}, {col})-> ", end='')
-    print("Goal!")
+    print("End Reached")
 
-    print("Number of steps:", episode_step)
+    print("Total steps:", episode_step)
     print("Total reward:", episode_reward)
 
     plt.xticks([]), plt.yticks([])
