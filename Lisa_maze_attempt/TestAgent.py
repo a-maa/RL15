@@ -12,6 +12,7 @@ step_penalty = -1                   # Penalty for taking any step in the maze.
 
 # This function simulates the agent's movements in the maze for a single episode.
 def finish_episode(agent, maze, current_episode, train=True):
+    
     # The starting position of the agent and the environment is initialised. 
     current_state = maze.start_position 
     end_reached = False

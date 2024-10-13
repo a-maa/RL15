@@ -17,8 +17,6 @@ actions = [
    (0, 1)                           # Moving one step right.
 ]
 
-
-
 # Initialise the Q-Learning agent 
 class QLearningAgent:
     def __init__(self, maze, learning_rate=0.1, discount_factor=0.9, exploration_start=1.0, exploration_end=0.01, num_episodes=100):
