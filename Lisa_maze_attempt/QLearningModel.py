@@ -3,12 +3,6 @@ import numpy as np                  # Library for arrays, matrices, mathematical
 import matplotlib.pyplot as plt     # Good for visualisations.
 from MazeVisual import Maze, maze
 
-# Reward system
-end_reward = 100                    # Reward for reaching the end goal state.
-sub_reward = 50                     # Reward for reaching the sub goal state.
-wall_penalty = -10                  # Penalty for touching any wall in the maze.
-step_penalty = -1                   # Penalty for taking any step in the maze.
-
 # Actions the agent can take.
 actions = [
    (-1, 0),                         # Moving one step up.
