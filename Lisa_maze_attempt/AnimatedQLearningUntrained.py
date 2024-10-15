@@ -12,10 +12,10 @@ step_penalty = -1
 
 # Agent's facing directions.
 direction_symbols = {
-    (0, 1): ">",   # Right.
-    (0, -1): "<",  # Left.
-    (-1, 0): "^",  # Up.
-    (1, 0): "v"    # Down.
+    (0, 1): "→",   # Right.
+    (0, -1): "←",  # Left.
+    (-1, 0): "↑",  # Up.
+    (1, 0): "↓"    # Down.
 }
 
 def finish_episode(agent, maze, current_episode, train=True):
