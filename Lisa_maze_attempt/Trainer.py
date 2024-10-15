@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from QLearningUntrained import finish_episode, agent
+from QLearningAlgorithm import finish_episode, agent
 from Agent import maze
 
 def train_agent(agent, maze, num_episodes=100):

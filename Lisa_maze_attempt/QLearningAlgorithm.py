@@ -16,47 +16,45 @@ def finish_episode(agent, maze, current_episode, train=True):
     # The starting position of the agent and the environment is initialised. 
     current_state = maze.start_position 
     end_reached = False
-    final_reward = 0                # Calulation the reward at the end of an episode.
+    episode_reward = 0                # Calulation the reward at the end of an episode.
     episode_step = 0                # Tracks how many steps the agent has taken since the start.
     path = [current_state]
     sub_goal_reached = False  
 
     while not end_reached:
+        # Get the agent's action for the current state using its Q-table
         action = agent.get_action(current_state, current_episode)
+
+        # Compute the next state based on the chosen action
         next_state = (current_state[0] + actions[action][0], current_state[1] + actions[action][1])
 
+        # Check if the next state is out of bounds or hitting a wall
         if next_state[0] < 0 or next_state[0] >= maze.maze_height or next_state[1] < 0 or next_state[1] >= maze.maze_width or maze.maze[next_state[1]][next_state[0]] == 1:
             reward = wall_penalty
             next_state = current_state
-
-        elif next_state == maze.sub_goal_position:
+        # Check if the agent reached the goal:
+        elif next_state == (maze.goal_position):
             path.append(current_state)
-            reward = sub_reward
-            sub_goal_reached = True
-            print(f"Sub-goal reached at: {next_state}") 
-
-        elif next_state == maze.goal_position:
-            if sub_goal_reached: 
-                path.append(current_state)
-                reward = end_reward
-                end_reached = True
-            else:
-                reward = wall_penalty  
-                next_state = current_state
-       
+            reward = end_reward
+            end_reached = True
+        # The agent takes a step but hasn't reached the goal yet
         else:
             path.append(current_state)
             reward = step_penalty
 
-        final_reward += reward
+        # Update the cumulative reward and step count for the episode
+        episode_reward += reward
         episode_step += 1
 
-        if train:
+        # Update the agent's Q-table if training is enabled
+        if train == True:
             agent.update_q_table(current_state, action, next_state, reward)
 
+        # Move to the next state for the next iteration
         current_state = next_state
 
-    return final_reward, episode_step, path
+    # Return the cumulative episode reward, total number of steps, and the agent's path during the simulation
+    return episode_reward, episode_step, path
 
 
 def test_agent(agent, maze, num_episodes=1):
