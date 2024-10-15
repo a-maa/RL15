@@ -2,7 +2,7 @@
 import numpy as np                  # Library for arrays, matrices, mathematical functions, etc.
 import matplotlib.pyplot as plt     # Good for visualisations.
 from MazeVisual import maze
-from QLearningModel import QLearningAgent, actions
+from Agent import QLearningAgent, actions
 
 # Reward system -> Parameters can be adjusted here for experimentation.
 end_reward = 100                    # Reward for reaching the end goal state.

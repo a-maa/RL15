@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from MazeVisual import maze
-from QLearningModel import QLearningAgent, actions
+from Agent import QLearningAgent, actions
 
 # Reward system
 end_reward = 100
@@ -82,8 +82,8 @@ def animate_agent(agent, maze, num_episodes=1):
             # Update agent marker with direction symbol based on movement
             agent_marker.set_position((pos[0], pos[1]))
 
-            # Default to '>' if no direction considered.
-            agent_marker.set_text(direction_symbols.get(movement, ">"))  
+            # Default to 'o' if no direction considered.
+            agent_marker.set_text(direction_symbols.get(movement, "o"))  
 
             # Change the "G" sub-goal marker from blue to black when reached.
             if pos == maze.sub_goal_position:
